@@ -1,0 +1,69 @@
+/* -NAVBAR- */
+
+.btnSearch {
+    background-color: rgb(223, 223, 223);
+    color: black;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    word-wrap: break-word;
+}
+
+.btnSearch:hover {
+    background-color: #e9cf85;
+}
+
+.liMenu {
+    font-size: 1.1rem;
+}
+
+.aMenu {
+    padding-top: 0.25rem;
+}
+
+.liMenu:hover {
+    color: #e9cf85 !important;
+}
+
+
+/* -CAROUSEL- */
+
+.carousel-item {
+    height: 50vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/* -MODAL- */
+
+.btnClose {
+    background-color: #e9cf85;
+    border-color: #e9cf85;
+    color: black
+}
+
+.btnClose:hover {
+    background-color: rgb(223, 223, 223);
+    border-color: rgb(223, 223, 223);
+    color: fff
+}
+
+
+/* -FOOTER- */
+
+footer {
+    background-color: #333;
+    color: white;
+}
+
+.textFooter {
+    color: #fff
+}
