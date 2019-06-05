@@ -1,3 +1,14 @@
+hr {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.titleSection {
+    padding-bottom: 2rem;
+    font-size: 3vw;
+}
+
+
 /* -NAVBAR- */
 
 .btnSearch {
@@ -29,16 +40,37 @@
 }
 
 
-/* -CAROUSEL- */
+/* -BANNER- */
 
-.carousel-item {
-    height: 50vh;
-    min-height: 350px;
+.banner {
+    width: 100%;
+    height: 40vh;
+    min-height: 30vh;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.name1 {
+    font-size: 2.5vw;
+}
+
+.name2 {
+    font-size: 5vw;
+}
+
+.imagen {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img1 {
+    background-image: url("../img/banner1.png");
 }
 
 
@@ -57,6 +89,73 @@
 }
 
 
+/* -CATEGORIAS- */
+
+.carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next {
+    transform: translateX(33.33%);
+}
+
+.carousel-inner .carousel-item-left.active,
+.carousel-inner .carousel-item-prev {
+    transform: translateX(-33.33%)
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: black;
+    padding: 1rem
+}
+
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:hover {
+    background-color: rgba(119, 7, 7, 0.849);
+    padding: 1.5rem
+}
+
+.categorySection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #e9ce85c9
+}
+
+.category {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.categoryimg {
+    border: rgba(0, 0, 0, 0.801);
+    border-radius: 50px;
+}
+
+.categoryName {
+    position: absolute;
+    top: 70%;
+    left: 2%;
+    font-size: 2.5vw;
+    color: black;
+    background-color: #e9ce85b0;
+    border-radius: 50px;
+    padding: 0.2rem
+}
+
+
+/* -PRODUCTS- */
+
+.productsSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #e9ce858e
+}
+
+
 /* -FOOTER- */
 
 footer {
@@ -66,4 +165,8 @@ footer {
 
 .textFooter {
     color: #fff
+}
+
+.textFooter:hover {
+    color: #e9cf85
 }
