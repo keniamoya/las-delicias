@@ -118,32 +118,10 @@ hr {
     padding: 1.5rem
 }
 
-.categorySection {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    background-color: #e9ce85c9
-}
-
 .category {
     position: relative;
     display: inline-block;
     text-align: center;
-}
-
-.categoryimg {
-    border: rgba(0, 0, 0, 0.801);
-    border-radius: 50px;
-}
-
-.categoryName {
-    position: absolute;
-    top: 70%;
-    left: 2%;
-    font-size: 2.5vw;
-    color: black;
-    background-color: #e9ce85b0;
-    border-radius: 50px;
-    padding: 0.2rem
 }
 
 
@@ -169,4 +147,39 @@ footer {
 
 .textFooter:hover {
     color: #e9cf85
+}
+
+
+/* ------------------------------------------------------------ */
+
+.categorySection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #e9ce85c9;
+    width: 100%;
+}
+
+.colCategoria {
+    margin: 0rem 0.5rem;
+    min-width: 20rem;
+    max-width: 20rem;
+    /*col-xs-12 col-sm-12 col-md-3 col-lg-3*/
+}
+
+.categoryimg {
+    border: rgba(0, 0, 0, 0.801);
+    border-radius: 50px;
+    width: 100%
+}
+
+.categoryName {
+    font-size: 1.5vw;
+    color: black;
+    margin: 0.2rem;
+}
+
+.categoryDescription {
+    font-size: 1.2vw;
+    color: black;
+    margin: 0.2rem;
 }
