@@ -1,5 +1,5 @@
-$('#recipeCarousel').carousel({
-    interval: 2000
+$('#recipeCategories').carousel({
+    interval: 5000
 })
 
 $('.carousel .carousel-item').each(function() {
@@ -15,3 +15,10 @@ $('.carousel .carousel-item').each(function() {
         $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
     }
 });
+
+$('#recipeProducts1').carousel({
+    interval: 4000
+})
+$('#recipeProducts2').carousel({
+    interval: 4500
+})
