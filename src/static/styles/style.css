@@ -133,6 +133,12 @@ hr {
     background-color: #e9ce858e
 }
 
+.productimg {
+    border: rgba(0, 0, 0, 0.801);
+    border-radius: 50px;
+    width: 100%;
+}
+
 
 /* -FOOTER- */
 
@@ -159,6 +165,10 @@ footer {
     width: 100%;
 }
 
+.categoryblock {
+    background-color: #e9ce85e0;
+}
+
 .colCategoria {
     margin: 0rem 0.5rem;
     min-width: 20rem;
@@ -169,7 +179,12 @@ footer {
 .categoryimg {
     border: rgba(0, 0, 0, 0.801);
     border-radius: 50px;
-    width: 100%
+    width: 100%;
+}
+
+.categoryblock:hover {
+    cursor: pointer;
+    border: solid #a84a13c9;
 }
 
 .categoryName {

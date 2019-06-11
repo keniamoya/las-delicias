@@ -1,29 +1,6 @@
-<div class="container categorySection text-center">
-    <h2 class="titleSection">Categorías</h2>
-    <div class="row">
-        <% for (var i = 0; i < (category.length); i ++) { %>
-            <div class="col align-self-center  colCategoria">
-                <div class="row">
-                    <p class="col categoryName align-self-center">
-                        <%= category[i].name_category %>
-                    </p>
-                </div>
-                <div class="row">
-                    <img class="categoryimg" src="img/<%= category[i].imagen %>">
-                </div>
-                <div class="row">
-                    <p class="col categoryName align-self-center categoryDescription">
-                        <%= category[i].description_category %>
-                    </p>
-                </div>
-            </div>
-            <% } %>
-    </div>
-</div>
-
-<div class="categorySection">
+<div class="productsSection">
     <div class="container text-center my-3">
-        <h2 class="titleSection">Categorías carousel</h2>
+        <h2 class="titleSection">Categorías</h2>
         <div class="row mx-auto my-auto">
             <div id="recipeCarouselP" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
@@ -34,12 +11,12 @@
                         }else {
                         active = ""}%>
                             <div class="carousel-item <%= active %>">
-                                <div class="colCategoria">
-                                    <p class=" categoryName">
+                                <div class="categoryblock">
+                                    <p class="categoryName">
                                         <%= category[i].name_category %>
                                     </p>
-                                    <img class="categoryimg" src="img/<%= category[i].imagen %>">
-                                    <p class=" categoryName align-self-center categoryDescription">
+                                    <img class="col categoryimg" src="img/<%= category[i].imagen %>">
+                                    <p class="categoryDescription">
                                         <%= category[i].description_category %>
                                     </p>
                                 </div>
