@@ -16,6 +16,8 @@ module.exports = app => {
         });
     });
 
+    app.get('/cart', function(req, res) {});
+
     app.post('/', (req, res) => {
         const { name_category, description_category } = req.body;
         connection.query('INSERT INTO category SET ? ', {
@@ -25,4 +27,7 @@ module.exports = app => {
             res.redirect('/principal');
         });
     });
+
+
+
 };

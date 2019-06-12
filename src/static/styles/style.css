@@ -11,6 +11,11 @@ hr {
 
 /* -NAVBAR- */
 
+.sticky {
+    top: 0;
+    width: 100%;
+}
+
 .btnSearch {
     background-color: rgb(223, 223, 223);
     color: black;
@@ -153,6 +158,10 @@ footer {
 
 .textFooter:hover {
     color: #e9cf85
+}
+
+.up {
+    content: "\f062";
 }
 
 
