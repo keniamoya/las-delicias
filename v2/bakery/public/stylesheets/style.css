@@ -135,7 +135,8 @@ hr {
 .productsSection {
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background-color: #e9ce858e
+    background-color: #e9ce858e;
+    width: 100%;
 }
 
 .productimg {
