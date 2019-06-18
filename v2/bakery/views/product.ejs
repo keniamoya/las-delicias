@@ -70,7 +70,7 @@
                         </p>
                     </div>
                     <div class="col">
-                        <button type="button" class="btnClose btn" data-dismiss="modal"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
+                        <button type="button" class="btnClose btn" data-toggle="modal" data-target="#modalBuy" onclick="principal()"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -84,6 +84,33 @@
         </div>
     </div>
 
+    <!-- MODAL -->
+    <div class="container">
+        <div class="modal fade" id="modalBuy">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Resultado</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Producto agregado exitosamente !
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btnClose btn" data-dismiss="modal"><i class="fas fa-close"></i>Cerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <div>
         <%- include('footer') -%>
@@ -94,6 +121,12 @@
             var price = '<%=product.price%>';
             var total = units * price;
             document.getElementById('total').innerHTML = 'Total: $' + total;
+        }
+    </script>
+    <script>
+        function principal() {
+            document.getElementById('units').value = '0';
+            document.getElementById('total').innerHTML = 'Total: $ 0'
         }
     </script>
     <script src="/javascripts/scripts.js"></script>
