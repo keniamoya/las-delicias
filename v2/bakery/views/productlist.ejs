@@ -7,22 +7,21 @@
 
                     <% active = "";%>
                         <% for (var i = 0; i < (products.length); i++) { if(i == 0) { active = "active" }else { active = ""}%>
-                            <div class="carousel-item <%= active %>">
-                                <div class="categoryblock">
-                                    <p class="categoryName">
-                                        <% id = products[i].id_product;%>
-                                            <a href="/product/<%=id%>">
-                                                <%=id%>
-                                            </a>
-                                            <%= products[i].name_product %>
-                                    </p>
-                                    <img class="col categoryimg" src="images/<%=products[i].imagen%>">
-                                    <p class="categoryDescription">
-                                        <%= products[i].description_product %>
-                                    </p>
+                            <% id = products[i].id_product;%>
+                                <div class="carousel-item <%= active %>">
+                                    <a class="link" href="/product/<%=id%>">
+                                        <div class="categoryblock">
+                                            <p class="categoryName">
+                                                <%= products[i].name_product %>
+                                            </p>
+                                            <img class="col categoryimg" src="images/<%=products[i].imagen%>">
+                                            <p class="categoryDescription">
+                                                <%= products[i].description_product %>
+                                            </p>
+                                        </div>
+                                    </a>
                                 </div>
-                            </div>
-                            <% } %>
+                                <% } %>
 
                 </div>
                 <a class="carousel-control-prev" href="#recipeProducts1" role="button" data-slide="prev">

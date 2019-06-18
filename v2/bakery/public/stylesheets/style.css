@@ -1,6 +1,6 @@
 hr {
     margin-top: 0rem;
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
 }
 
 .titleSection {
@@ -139,22 +139,43 @@ hr {
     width: 100%;
 }
 
+.imgCol {
+    border-right-width: thin;
+    border-right-color: rgba(0, 3, 3, 0.144);
+    border-right-style: solid;
+}
+
 .productimg {
     border: rgba(0, 0, 0, 0.801);
     border-radius: 50px;
     width: 100%;
 }
 
+.productArea {
+    background-color: #f3e4bb;
+    padding: 0rem 4rem 3rem 4rem;
+}
+
 .productCol {
-    margin: 2rem 0rem;
-    padding: 2rem 0rem;
-    background-color: #e9ce858e;
+    margin: 0rem 0rem 0rem 0rem;
+    padding: 1rem 0rem;
 }
 
 .imgProduct {
     margin: 2rem;
     padding: 2rem;
     background-color: #e9cf85;
+}
+
+.link:hover {
+    color: #a84a13c9;
+}
+
+
+/* -PRODUCT- */
+
+.rowProduct {
+    margin: 1rem;
 }
 
 

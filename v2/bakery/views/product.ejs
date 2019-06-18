@@ -30,36 +30,57 @@
     </div>
 
     <!-- PRODUCT -->
-    <div class="container">
+    <div class="container productArea">
+        <hr>
         <div class="row">
-            <div class="col productCol text-center">
-                <img class="imgProduct" src="/images/<%=product.imagen%>">
+            <div class="col productCol d-flex justify-content-center imgCol">
+                <img class="imgProduct mx-auto d-block" src="/images/<%=product.imagen%>">
             </div>
-            <div class="col productCol">
-                <div class="row d-flex justify-content-center">
+            <div class="col productCol imgCol">
+                <div class="row rowProduct d-flex justify-content-center ">
                     <h2 class="titleSection">
                         <%= product.name_product %>
                     </h2>
                 </div>
                 <hr>
-                <div class="row ">
-                    <div class="col d-flex justify-content-center">
-                        <input type="number" required value="1" min="0" max="1000" step="1" />
+                <div class="row rowProduct">
+                    <div class="col d-flex justify-content-left imgCol">
+                        <input id="units" type="number" required value="0" min="0" max="1000" step="1" onclick="total()" />
+                        <p class="categoryName">unidades</p>
                     </div>
-                    <div class="col d-flex justify-content-center">
+                    <div class="col d-flex justify-content-left ">
                         <p class="categoryName">
-                            $
+                            Precio: $
                             <%= product.price %>
                         </p>
                     </div>
                 </div>
                 <hr>
-                <div class="row d-flex justify-content-center">
+                <div class="row rowProduct d-flex justify-content-left ">
                     <p class="categoryName">
                         <%= product.description_product %>
+                            <%= product.description_product %>
+                                <%= product.description_product %>
                     </p>
                 </div>
+                <hr>
+                <div class="row rowProduct d-flex ">
+                    <div class="col imgCol">
+                        <p id="total" class="categoryName"> Total: $ 0
+                        </p>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btnClose btn" data-dismiss="modal"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
+                    </div>
+                </div>
             </div>
+        </div>
+        <hr>
+        <div class="row d-flex justify-content-left">
+            <p class="categoryName"> Instrucciones especiales: </p>
+        </div>
+        <div class="row d-flex justify-content-left">
+            <textarea class="form-control" rows="3" id="comment"></textarea>
         </div>
     </div>
 
@@ -67,7 +88,14 @@
     <div>
         <%- include('footer') -%>
     </div>
-
+    <script>
+        function total() {
+            var units = document.getElementById('units').value
+            var price = '<%=product.price%>';
+            var total = units * price;
+            document.getElementById('total').innerHTML = 'Total: $' + total;
+        }
+    </script>
     <script src="/javascripts/scripts.js"></script>
 
 </body>
