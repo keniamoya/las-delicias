@@ -130,7 +130,7 @@ hr {
 }
 
 
-/* -PRODUCTS- */
+/* -PRODUCT LIST- */
 
 .productsSection {
     padding-top: 2rem;
@@ -143,6 +143,18 @@ hr {
     border: rgba(0, 0, 0, 0.801);
     border-radius: 50px;
     width: 100%;
+}
+
+.productCol {
+    margin: 2rem 0rem;
+    padding: 2rem 0rem;
+    background-color: #e9ce858e;
+}
+
+.imgProduct {
+    margin: 2rem;
+    padding: 2rem;
+    background-color: #e9cf85;
 }
 
 

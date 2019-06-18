@@ -10,7 +10,11 @@
                             <div class="carousel-item <%= active %>">
                                 <div class="categoryblock">
                                     <p class="categoryName">
-                                        <%= products[i].name_product %>
+                                        <% id = products[i].id_product;%>
+                                            <a href="/product/<%=id%>">
+                                                <%=id%>
+                                            </a>
+                                            <%= products[i].name_product %>
                                     </p>
                                     <img class="col categoryimg" src="images/<%=products[i].imagen%>">
                                     <p class="categoryDescription">
