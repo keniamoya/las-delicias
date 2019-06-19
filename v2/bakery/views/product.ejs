@@ -45,7 +45,7 @@
                 <hr>
                 <div class="row rowProduct">
                     <div class="col d-flex justify-content-left imgCol">
-                        <input id="units" type="number" required value="0" min="0" max="1000" step="1" onclick="total()" />
+                        <input id="units" type="number" required value="0" min="0" max="1000" step="1" onchange="total()" />
                         <p class="categoryName">unidades</p>
                     </div>
                     <div class="col d-flex justify-content-left ">
@@ -120,7 +120,7 @@
             var units = document.getElementById('units').value
             var price = '<%=product.price%>';
             var total = units * price;
-            document.getElementById('total').innerHTML = 'Total: $' + total;
+            document.getElementById('total').innerHTML = 'Total: $ ' + total;
         }
     </script>
     <script>

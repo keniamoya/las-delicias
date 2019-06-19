@@ -56,6 +56,9 @@ hr {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    border-bottom-width: 0.5rem;
+    border-bottom-color: #333;
+    border-bottom-style: solid;
 }
 
 .name1 {
@@ -75,7 +78,7 @@ hr {
 }
 
 .img1 {
-    background-image: url("/images/banner1.png");
+    background-image: url("/images/banner2.png");
 }
 
 
@@ -137,6 +140,9 @@ hr {
     padding-bottom: 2rem;
     background-color: #e9ce858e;
     width: 100%;
+    border-bottom-width: 0.5rem;
+    border-bottom-color: #333;
+    border-bottom-style: solid;
 }
 
 .imgCol {
@@ -153,7 +159,7 @@ hr {
 
 .productArea {
     background-color: #f3e4bb;
-    padding: 0rem 4rem 3rem 4rem;
+    padding: 2rem 4rem 3rem 4rem;
 }
 
 .productCol {
@@ -179,6 +185,33 @@ hr {
 }
 
 
+/* -US- */
+
+.usArea {
+    background-color: #f3e4bb;
+    padding: 1rem 4rem 3rem 4rem;
+}
+
+.pUs {
+    text-align: justify;
+}
+
+
+/* -CART- */
+
+.centerVertically {
+    align-self: center;
+}
+
+.rowOrder {
+    padding: 0.5rem;
+}
+
+.buttonOrder {
+    text-align: right;
+}
+
+
 /* -FOOTER- */
 
 footer {
@@ -194,8 +227,8 @@ footer {
     color: #e9cf85
 }
 
-.up {
-    content: "\f062";
+.textFooter:visited {
+    color: #e9cf85
 }
 
 
