@@ -4,7 +4,7 @@ hr {
 }
 
 .titleSection {
-    padding-bottom: 2rem;
+    padding-bottom: 1.8rem;
     font-size: 3vw;
 }
 
@@ -151,10 +151,29 @@ hr {
     border-right-style: solid;
 }
 
+.productListBody {
+    background-color: #e9ce858e;
+}
+
 .productimg {
     border: rgba(0, 0, 0, 0.801);
     border-radius: 50px;
     width: 100%;
+    min-width: 100;
+    min-height: 80px;
+    max-width: 200px;
+    max-height: 140px;
+}
+
+.productBlock {
+    border-right-width: thin;
+    border-right-color: rgba(0, 3, 3, 0.144);
+    border-right-style: solid;
+}
+
+.productBlock:hover {
+    cursor: pointer;
+    border: solid #a84a13c9;
 }
 
 .productArea {
@@ -256,6 +275,10 @@ footer {
     border: rgba(0, 0, 0, 0.801);
     border-radius: 50px;
     width: 100%;
+    min-width: 330px;
+    min-height: 160px;
+    max-width: 360px;
+    max-height: 180px;
 }
 
 .categoryblock:hover {

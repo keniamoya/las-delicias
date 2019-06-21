@@ -1,24 +1,23 @@
 <div class="productsSection">
     <div class="container text-center my-3">
-        <h2 class="titleSection">Categorías </h2>
+        <h2 class="titleSection">Categorías
+        </h2>
         <div class="row mx-auto my-auto">
             <div id="recipeCategories" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
 
                     <% active = "";%>
                         <% for (var i = 0; i < (category.length); i++) { if(i == 0) { active = "active" }else { active = ""}%>
-                            <div class="carousel-item <%= active %>">
-                                <div class="categoryblock">
-                                    <p class="categoryName">
-                                        <%= category[i].name_category %>
-                                    </p>
-                                    <img class="col categoryimg" src="images/<%=category[i].imagen%>">
-                                    <p class="categoryDescription">
-                                        <%= category[i].description_category %>
-                                    </p>
+                            <% id = category[i].idCategory;%>
+                                <div class="carousel-item <%=active%>">
+                                    <div class="categoryblock" data-toggle="modal" data-target="#modalProductlist">
+                                        <p class="categoryName">
+                                            <%= category[i].category_Name %>
+                                        </p>
+                                        <img class="col categoryimg" src="images/<%=category[i].category_Image%>">
+                                    </div>
                                 </div>
-                            </div>
-                            <% } %>
+                                <% } %>
                 </div>
                 <a class="carousel-control-prev" href="#recipeCategories" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

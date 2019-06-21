@@ -34,12 +34,12 @@
         <hr>
         <div class="row">
             <div class="col productCol d-flex justify-content-center imgCol">
-                <img class="imgProduct mx-auto d-block" src="/images/<%=product.imagen%>">
+                <img class="imgProduct mx-auto d-block" src="/images/<%=product.product_Image%>">
             </div>
             <div class="col productCol imgCol">
                 <div class="row rowProduct d-flex justify-content-center ">
                     <h2 class="titleSection">
-                        <%= product.name_product %>
+                        <%= product.name %>
                     </h2>
                 </div>
                 <hr>
@@ -58,9 +58,9 @@
                 <hr>
                 <div class="row rowProduct d-flex justify-content-left ">
                     <p class="categoryName">
-                        <%= product.description_product %>
-                            <%= product.description_product %>
-                                <%= product.description_product %>
+                        <%= product.description %>
+                            <%= product.description %>
+                                <%= product.description %>
                     </p>
                 </div>
                 <hr>
@@ -80,7 +80,7 @@
             <p class="categoryName"> Instrucciones especiales: </p>
         </div>
         <div class="row d-flex justify-content-left">
-            <textarea class="form-control" rows="3" id="comment"></textarea>
+            <textarea id="comment" class="form-control" rows="3"></textarea>
         </div>
     </div>
 
@@ -127,6 +127,7 @@
         function principal() {
             document.getElementById('units').value = '0';
             document.getElementById('total').innerHTML = 'Total: $ 0'
+            document.getElementById('comment').value = '';
         }
     </script>
     <script src="/javascripts/scripts.js"></script>

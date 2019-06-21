@@ -4,15 +4,16 @@ var async = require('async');
 var router = express.Router();
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'bd_category'
+    host: 'database-1.cvwujr4q7dqs.us-east-2.rds.amazonaws.com',
+    user: 'admin',
+    password: 'Pepito123',
+    database: 'Delicias_db'
 });
 
 router.get('/', function(req, res, next) {
-    var query1 = 'select * from category';
-    var query2 = 'select * from products';
+    //var id = req.params.id;
+    var query1 = 'select * from Category';
+    var query2 = 'select * from Product'; // where idCategory = ?';
 
     var category = {};
     var products = {};
@@ -26,7 +27,7 @@ router.get('/', function(req, res, next) {
             });
         },
         function(parallel_done) {
-            connection.query(query2, {}, function(err, results) {
+            connection.query(query2, {}, function(err, results) { //[id], function(err, results) {
                 if (err) return parallel_done(err);
                 products = results;
                 parallel_done();
