@@ -6,28 +6,33 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Resultado de la búsqueda</h4>
+                    <h4 id="title" class="modal-title">
+                        Productos relacionados
+                    </h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body productListBody">
-                    <div class="row">
-                        <% for (var i = 0; i < (products.length); i++) { if(i == 0) { active = "active" }else { active = ""}%>
-                            <% id = products[i].idProduct;%>
-                                <div class="col-3 productBlock">
-                                    <a class="link" href="/product/<%=id%>">
-                                        <p class="categoryName">
-                                            <%= products[i].name %> <br> $
-                                                <%= products[i].price %>
-                                        </p>
-                                        <hr>
-                                        <img class="productimg" src="images/<%=products[i].product_Image%>">
-                                    </a>
-                                    <hr>
-                                </div>
-                                <% } %>
-                    </div>
+                    <% var idSelect = id;%>
+                        <div class="row">
+                            <p onclick="prueba(<%=idSelect%>)">lolo</p>
+                            <%for (var i = 0; i < (products.length); i++) { %>
+                                <% if(products[i].idCategory == idSelect) {%>
+                                    <% idP = products[i].idProduct;%>
+                                        <div class="col-3 productBlock">
+                                            <a class="link" href="/product/<%=idP%>">
+                                                <p class="categoryName">
+                                                    <%= products[i].name %> <br> $
+                                                        <%= products[i].price %>
+                                                </p>
+                                                <hr>
+                                                <img class="productimg" src="images/<%=products[i].product_Image%>">
+                                            </a>
+                                            <hr>
+                                        </div>
+                                        <%} }%>
+                        </div>
                 </div>
 
                 <!-- Modal footer -->
@@ -39,3 +44,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    function prueba(id) {
+        idSelected = id;
+        alert(idSelected)
+            // var title = 'Productos relacionados a: ' + id;
+            // document.getElementById('title').innerHTML = title;
+    }
+</script>

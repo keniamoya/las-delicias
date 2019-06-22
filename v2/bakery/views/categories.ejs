@@ -5,19 +5,19 @@
         <div class="row mx-auto my-auto">
             <div id="recipeCategories" class="carousel slide w-100" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
-
-                    <% active = "";%>
-                        <% for (var i = 0; i < (category.length); i++) { if(i == 0) { active = "active" }else { active = ""}%>
-                            <% id = category[i].idCategory;%>
-                                <div class="carousel-item <%=active%>">
-                                    <div class="categoryblock" data-toggle="modal" data-target="#modalProductlist">
-                                        <p class="categoryName">
-                                            <%= category[i].category_Name %>
-                                        </p>
-                                        <img class="col categoryimg" src="images/<%=category[i].category_Image%>">
+                    <% id = 1; %>
+                        <% active = "";%>
+                            <% for (var i = 0; i < (category.length); i++) { if(i == 0) { active = "active" }else { active = ""}%>
+                                <% id = category[i].idCategory;%>
+                                    <div class="carousel-item <%=active%>">
+                                        <div onclick="prueba(<%=id%>)" class="categoryblock" data-toggle="modal" data-target="#modalProductlist">
+                                            <p class="categoryName">
+                                                <%= category[i].category_Name %>
+                                            </p>
+                                            <img class="col categoryimg" src="images/<%=category[i].category_Image%>">
+                                        </div>
                                     </div>
-                                </div>
-                                <% } %>
+                                    <% } %>
                 </div>
                 <a class="carousel-control-prev" href="#recipeCategories" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,3 +32,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    idSelected = 1;
+
+    function prueba(id) {
+        idSelected = id;
+        //alert(idSelected)
+        // var title = 'Productos relacionados a: ' + id;
+        // document.getElementById('title').innerHTML = title;
+    }
+</script>
