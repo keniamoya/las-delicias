@@ -49,32 +49,34 @@
             <!-- Product list -->
             <div class="col-8">
                 <!-- for de productos en el carrito -->
-                <% for (let i = 0; i < (cart.length); i++) { %>
-                    <div class="row rowOrder">
-                        <div class="col-1 centerVertically"><i class="fas fa-trash-alt"></i></div>
-                        <div class="col-3 centerVertically"><img src="/images/<%=cart[i].product_Image%>" alt="" width="100" height="80"></div>
-                        <div class="col-3">
-                            <div class="row">
-                                <p class="categoryName">
-                                    <%=cart[i].name%>
-                                </p>
+                <% priceTotal = 0%>
+                    <% for (let i = 0; i < (cart.length); i++) { %>
+                        <% priceTotal = priceTotal + (cart[i].price * cart[i].quantity)%>
+                            <div class="row rowOrder">
+                                <div class="col-1 centerVertically"><i class="fas fa-trash-alt"></i></div>
+                                <div class="col-3 centerVertically"><img src="/images/<%=cart[i].product_Image%>" alt="" width="100" height="80"></div>
+                                <div class="col-3">
+                                    <div class="row">
+                                        <p class="categoryName">
+                                            <%=cart[i].name%>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <%name1 = 'total' + i%>
+                                            <%total = cart[i].price * cart[i].quantity%>
+                                                <span class="categoryDescription">Total: $</span>
+                                                <span id="<%=name1%>" class="categoryDescription"><%=total%></span>
+                                    </div>
+                                </div>
+                                <div class="col-5 centerVertically">
+                                    <%name2 = 'units' + i%>
+                                        <input id="<%=name2%>" type="number" required value="<%=cart[i].quantity%>" min="0" max="1000" step="1" />
+                                        <button id="update" type="button" class="btnClose btn" onclick="total('<%=cart[i].price%>', '<%=name1%>', '<%=name2%>', '<%=cart.length%>')" data-toggle="modal" data-target="#modalUpdate"><i class="fas fa-check"></i> Actualizar</button>
+                                </div>
                             </div>
-                            <div class="row">
-                                <%name1 = 'total' + i%>
-                                    <%total = cart[i].price * cart[i].quantity%>
-                                        <span class="categoryDescription">Total: $</span>
-                                        <span id="<%=name1%>" class="categoryDescription"><%=total%></span>
-                            </div>
-                        </div>
-                        <div class="col-5 centerVertically">
-                            <%name2 = 'units' + i%>
-                                <input id="<%=name2%>" type="number" required value="<%=cart[i].quantity%>" min="0" max="1000" step="1" />
-                                <button id="update" type="button" class="btnClose btn" onclick="total('<%=cart[i].price%>', '<%=name1%>', '<%=name2%>', '<%=cart.length%>')" data-toggle="modal" data-target="#modalUpdate"><i class="fas fa-check"></i> Actualizar</button>
-                        </div>
-                    </div>
-                    <% } %>
-                        <hr>
-                        <!-- fin de for -->
+                            <% } %>
+                                <hr>
+                                <!-- fin de for -->
             </div>
 
             <!-- Resume -->
@@ -85,7 +87,7 @@
                     </div>
                     <div class="col">
                         <span>$</span>
-                        <span id="subtotal" class="categoryName">0</span>
+                        <span id="subtotal" class="categoryName"><%=priceTotal%></span>
                     </div>
                 </div>
                 <div class="row">
@@ -94,7 +96,7 @@
                     </div>
                     <div class="col">
                         <span>$</span>
-                        <span id="send" class="categoryName"> 0 </span>
+                        <span id="send" class="categoryName"> <%=priceTotal*0.10%> </span>
                     </div>
                 </div>
                 <hr>
@@ -104,7 +106,7 @@
                     </div>
                     <div class="col">
                         <span>$</span>
-                        <span id="totalSend" class="categoryName"> 0 </span>
+                        <span id="totalSend" class="categoryName"> <%=priceTotal + (priceTotal*0.10)%> </span>
                     </div>
                 </div>
                 <hr>
