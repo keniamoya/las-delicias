@@ -12,9 +12,9 @@ const connection = mysql.createConnection({
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
     var id = req.params.id;
-    connection.query('select name, description, price, product_Image from Product where idProduct = ?', [id], function(err, rows, fileds) {
+    connection.query('select * from Product where idCategory = ?', [id], function(err, rows) {
         if (err) throw err;
-        res.render('product', { title: 'Las delicias', product: rows[0] });
+        res.render('productList', { title: 'Las delicias', products: rows });
     })
 });
 

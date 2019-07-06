@@ -1,3 +1,10 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 hr {
     margin-top: 0rem;
     margin-bottom: 1rem;
@@ -135,6 +142,34 @@ hr {
 
 /* -PRODUCT LIST- */
 
+.productList {
+    background-image: url("/images/banner2.png");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.productListElements {
+    background-color: rgb(0, 0, 0);
+    background-color: #e9ce858e;
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
 .productsSection {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -163,6 +198,7 @@ hr {
     min-height: 80px;
     max-width: 200px;
     max-height: 140px;
+    margin-bottom: 1rem;
 }
 
 .productBlock {
