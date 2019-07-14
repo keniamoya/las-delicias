@@ -24,10 +24,6 @@
 </header>
 
 <body>
-    <!-- MODAL -->
-    <div>
-        <%- include('search') -%>
-    </div>
 
     <!-- BANNER -->
     <div>
@@ -41,34 +37,72 @@
                 <h2 class="col titleSection"> Historia </h2>
             </div>
             <div class="row d-flex justify-content-left">
-                <p class="col categoryName pUs">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                    survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-                    with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <div class="col-md-6 col-sm-12">
+                    <p class="categoryName pUs">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                        survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                        with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <video width="100%" height="auto" poster="/video/lasdelicias.mp4" controls autoplay loop>
+                            <source src="/video/lasdelicias.mp4" type="video/mp4">
+                         </video>
+                </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <h2 class="titleSection"> Misión </h2>
                     <p class="categoryName pUs">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                     </p>
                 </div>
-                <div class="col">
+                <div class="col-md-6 col-sm-12">
                     <h2 class="titleSection"> Visión </h2>
                     <p class="categoryName pUs">
                         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
                 </div>
             </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <h2 class="titleSection"> Visitános </h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125693.36219681056!2d-84.45808705883073!3d10.105833310287121!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa05bbdbfbb9463%3A0xf6ecdd98ba945ec4!2sProvincia+de+Alajuela%2C+Naranjo!5e0!3m2!1ses!2scr!4v1563096221553!5m2!1ses!2scr"
+                        width="100%" height="auto" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <h2 class="titleSection"> Contáctenos </h2>
+                    <form action="/" class="was-validated">
+                        <div class="form-group">
+                            <label for="uname">Nombre:</label>
+                            <input type="text" class="form-control" id="uname" placeholder="Escriba su nombre..." name="uname" required>
+                            <div class="valid-feedback">Válido</div>
+                            <div class="invalid-feedback">Por favor complete este espacio.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Correo electrónico:</label>
+                            <input type="email" class="form-control" id="address" placeholder="Escriba su correo electrónico..." name="pswd" required>
+                            <div class="valid-feedback">Válido</div>
+                            <div class="invalid-feedback">Por favor complete este espacio.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Comentario o consulta:</label>
+                            <input type="text" class="form-control" id="address" placeholder="Escriba su comentario..." name="comment" list="3" required>
+                            <div class="valid-feedback">Válido</div>
+                            <div class="invalid-feedback">Por favor complete este espacio.</div>
+                        </div>
+                        <button type="submit" class="btnClose btn"><i class="fas fa-shopping-bag"></i> Enviar</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <!-- FOOTER -->
-    <div>
-        <%- include('footer') -%>
-    </div>
+        <br>
+        <!-- FOOTER -->
+        <div>
+            <%- include('footer') -%>
+        </div>
 
 </body>
 

@@ -24,36 +24,35 @@
 </header>
 
 <body>
-    <!-- MODAL -->
-    <div>
-        <%- include('search') -%>
-    </div>
 
-    <div class="productList"></div>
-
-    <!-- PRODUCT LIST-->
-    <div class="productListElements">
-        <div class="container text-center my-3">
-            <h2 class="titleSection ">Productos relacionados</h2>
-            <hr>
-        </div>
-        <div class="row">
-            <%for (let i = 0; i < (products.length); i++) { %>
-                <% idP = products[i].idProduct;%>
-                    <div class="col-md-6 col-sm-12 productBlock">
-                        <a class="link" href="/product/<%=idP%>">
-                            <p class="categoryName">
-                                <%= products[i].name %> <br> $
-                                    <%= products[i].price %>
-                            </p>
-                            <hr>
-                            <img class="productimg" src="/images/<%=products[i].product_Image%>">
-                        </a>
-                        <hr>
-                    </div>
-                    <% }%>
+    <div class="productList">
+        <div class="container">
+            <div class="productListElements">
+                <div class="container text-center my-3">
+                    <a href="/"><i class="far fa-times-circle fa-2x"></i></a>
+                    <h2 class="titleSection ">Productos relacionados</h2>
+                    <hr>
+                </div>
+                <div class="row">
+                    <%for (let i = 0; i < (products.length); i++) { %>
+                        <% idP = products[i].idProduct;%>
+                            <div class="col productBlock">
+                                <a class="link" href="/product/<%=idP%>">
+                                    <p class="categoryName">
+                                        <%= products[i].name %> <br> $
+                                            <%= products[i].price %>
+                                    </p>
+                                    <hr>
+                                    <img class="productimg" src="/images/<%=products[i].product_Image%>">
+                                </a>
+                                <hr>
+                            </div>
+                            <% }%>
+                </div>
+            </div>
         </div>
     </div>
+
 
 
     <!-- FOOTER -->

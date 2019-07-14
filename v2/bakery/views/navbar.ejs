@@ -1,15 +1,15 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
+    <div id="nav" class="container">
         <a class="navbar-brand" href="/"> <img src="/images/iconGeneral.png" alt=""> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mr-auto">
-                <form class="form-inline formSearch" action="#">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Escribe aquí...">
-                    <button id="btnSearch" type="button" class="btn btnSearch" data-toggle="modal" data-target="#modalSearch"><i class="fas fa-search"></i> Buscar</button>
+                <form class="form-inline formSearch" action="/search" method="post">
+                    <input id="word" name="word" class="form-control mr-sm-2" type="text" placeholder="Escribe aquí..." required>
+                    <button type="submit" class="btnClose btn"><i class="fas fa-search"></i> Buscar</button>
                 </form>
             </ul>
             <ul class="navbar-nav ml-auto">

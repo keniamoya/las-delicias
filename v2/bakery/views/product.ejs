@@ -24,63 +24,62 @@
 </header>
 
 <body>
-    <!-- MODAL -->
-    <div>
-        <%- include('search') -%>
-    </div>
 
     <!-- PRODUCT -->
     <div class="container productArea">
         <hr>
-        <div class="row">
-            <div class="col productCol d-flex justify-content-center imgCol">
-                <img class="imgProduct mx-auto d-block" src="/images/<%=product.product_Image%>">
-            </div>
-            <div class="col productCol imgCol">
-                <div class="row rowProduct d-flex justify-content-center ">
-                    <h2 class="titleSection">
-                        <%= product.name %>
-                    </h2>
+        <form method="post" name="form1">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 productCol d-flex justify-content-center imgCol">
+                    <img class="imgProduct mx-auto d-block" src="/images/<%=product.product_Image%>">
                 </div>
-                <hr>
-                <div class="row rowProduct">
-                    <div class="col d-flex justify-content-left imgCol">
-                        <input id="units" type="number" required value="0" min="0" max="1000" step="1" onchange="total()" />
-                        <p class="categoryName">unidades</p>
+                <div class="col-md-6 col-sm-12 productCol imgCol">
+                    <div class="row rowProduct d-flex justify-content-center ">
+                        <h2 class="name1">
+                            <%= product.name %>
+                        </h2>
                     </div>
-                    <div class="col d-flex justify-content-left ">
+                    <hr>
+                    <div class="row rowProduct">
+                        <div class="col d-flex justify-content-left imgCol">
+                            <input id="units" name="units" type="number" required value="0" min="0" max="1000" step="1" onchange="total()" />
+                            <p class="categoryName">unidades</p>
+                        </div>
+                        <div class="col d-flex justify-content-left ">
+                            <p class="categoryName">
+                                Precio: $
+                                <%= product.price %>
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row rowProduct d-flex justify-content-left ">
                         <p class="categoryName">
-                            Precio: $
-                            <%= product.price %>
-                        </p>
-                    </div>
-                </div>
-                <hr>
-                <div class="row rowProduct d-flex justify-content-left ">
-                    <p class="categoryName">
-                        <%= product.description %>
                             <%= product.description %>
                                 <%= product.description %>
-                    </p>
-                </div>
-                <hr>
-                <div class="row rowProduct d-flex ">
-                    <div class="col imgCol">
-                        <p id="total" class="categoryName"> Total: $ 0 </p>
+                                    <%= product.description %>
+                        </p>
                     </div>
-                    <div class="col">
-                        <button type="button" class="btnClose btn" data-toggle="modal" data-target="#modalBuy" onclick="principal()"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
+                    <hr>
+                    <div class="row rowProduct d-flex ">
+                        <div class="col imgCol">
+                            <span class="categoryName"> Total: $  </span>
+                            <span id="total" name="total" class="categoryName"> 0 </span>
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btnClose btn" data-toggle="modal" data-target="#modalBuy" onclick="validation()"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <hr>
-        <div class="row d-flex justify-content-left">
-            <p class="categoryName"> Instrucciones especiales: </p>
-        </div>
-        <div class="row d-flex justify-content-left">
-            <textarea id="comment" class="form-control" rows="3"></textarea>
-        </div>
+            <hr>
+            <div class="row d-flex justify-content-left">
+                <p class="categoryName"> Instrucciones especiales: </p>
+            </div>
+            <div class="row d-flex justify-content-left">
+                <textarea id="specification" name="specification" class="form-control" rows="3"></textarea>
+            </div>
+        </form>
     </div>
 
     <!-- MODAL -->
@@ -97,12 +96,12 @@
 
                     <!-- Modal body -->
                     <div class="modal-body">
-                        Producto agregado exitosamente !
+                        <p id="result"></p>
                     </div>
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btnClose btn" data-dismiss="modal"><i class="fas fa-close"></i>Cerrar</button>
+                        <button type="button" class="btnClose btn" data-dismiss="modal" onclick="goback()"><i class="fas fa-close"></i>Cerrar</button>
                     </div>
 
                 </div>
@@ -119,14 +118,23 @@
             var units = document.getElementById('units').value
             var price = '<%=product.price%>';
             var total = units * price;
-            document.getElementById('total').innerHTML = 'Total: $ ' + total;
+            document.getElementById('total').innerHTML = total;
         }
-    </script>
-    <script>
-        function principal() {
-            document.getElementById('units').value = '0';
-            document.getElementById('total').innerHTML = 'Total: $ 0'
-            document.getElementById('comment').value = '';
+
+        function goback() {
+            var amount = document.getElementById('units').value;
+            if (amount != 0) {
+                location.href = '/'
+            }
+        }
+
+        function validation() {
+            var amount = document.getElementById('units').value;
+            if (amount == 0) {
+                document.getElementById('result').innerHTML = "No ha seleccionado una cantidad válida"
+            } else {
+                document.getElementById('result').innerHTML = "Producto agregado exitosamente !"
+            }
         }
     </script>
     <script src="/javascripts/scripts.js"></script>

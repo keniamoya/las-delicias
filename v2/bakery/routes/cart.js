@@ -1,6 +1,6 @@
 var express = require('express');
 var mysql = require('mysql');
-var async = require('async');
+
 var router = express.Router();
 
 const connection = mysql.createConnection({
@@ -11,31 +11,36 @@ const connection = mysql.createConnection({
 });
 
 router.get('/', function(req, res, next) {
-    //var id = req.params.id;
-    var query1 = 'select name, product_Image, price, quantity from OrderDetail, Product where Product.idProduct = OrderDetail.idProduct';
-    var query2 = 'select * from OrderTable';
+    connection.query('select Product.idProduct as id, name, product_Image, price, sum(quantity) as quantity from OrderDetail, Product where Product.idProduct = OrderDetail.idProduct group by Product.idProduct', {}, function(err, result, fileds) {
+        if (err) throw err;
+        res.render('cart', { title: 'Las delicias', cart: result });
+    })
+});
 
-    var cart = {};
-    var order = {};
+router.post('/delete', function(req, res) {
+    var id = req.body.idProduct;
+    connection.query('delete from OrderDetail where idProduct = ?', [id], function(err, result) {
+        if (err) throw err;
+        res.redirect('/cart');
+        console.log('Deleted!');
+    });
+});
 
-    async.parallel([
-        function(parallel_done) {
-            connection.query(query1, {}, function(err, results) {
-                if (err) return parallel_done(err);
-                cart = results;
-                parallel_done();
-            });
-        },
-        function(parallel_done) {
-            connection.query(query2, {}, function(err, results) {
-                if (err) return parallel_done(err);
-                order = results;
-                parallel_done();
-            });
-        }
-    ], function(err) {
-        if (err) console.log(err);
-        res.render('cart', { title: 'Las delicias', cart: cart, order: order });
+router.post('/update', function(req, res) {
+    var id = req.body.idProduct2;
+    var quantity = req.body.quantityProduct;
+    connection.query('update OrderDetail set quantity = ? where idProduct = ?;', [quantity, id], function(err, result) {
+        if (err) throw err;
+        res.redirect('/cart');
+        console.log('Updated!');
+    });
+});
+
+router.post('/checkout', function(req, res) {
+    connection.query('delete from OrderDetail where idOrder = 1', {}, function(err, result) {
+        if (err) throw err;
+        res.redirect('/');
+        console.log('Clean!');
     });
 });
 

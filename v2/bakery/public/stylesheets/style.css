@@ -10,6 +10,10 @@ hr {
     margin-bottom: 1rem;
 }
 
+.fa-times-circle {
+    color: black;
+}
+
 .titleSection {
     padding-bottom: 1.8rem;
     font-size: 3vw;
@@ -144,12 +148,6 @@ hr {
 
 .productList {
     background-image: url("/images/banner2.png");
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .productListElements {
@@ -157,17 +155,9 @@ hr {
     background-color: #e9ce858e;
     font-weight: bold;
     border: 2px solid #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
+    width: 100%;
     padding: 20px;
     text-align: center;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
 }
 
 .productsSection {
@@ -194,6 +184,7 @@ hr {
     border: rgba(0, 0, 0, 0.801);
     border-radius: 50px;
     width: 100%;
+    height: auto;
     min-width: 100;
     min-height: 80px;
     max-width: 200px;
@@ -223,9 +214,11 @@ hr {
 }
 
 .imgProduct {
-    margin: 2rem;
-    padding: 2rem;
+    margin: 1rem;
+    padding: 1rem;
     background-color: #e9cf85;
+    width: 100%;
+    height: auto;
 }
 
 .link:hover {
@@ -244,7 +237,7 @@ hr {
 
 .usArea {
     background-color: #f3e4bb;
-    padding: 1rem 4rem 3rem 4rem;
+    padding: 1rem 0rem 3rem 0rem;
 }
 
 .pUs {
@@ -264,6 +257,10 @@ hr {
 
 .buttonOrder {
     text-align: right;
+}
+
+#removeRow:hover {
+    cursor: pointer;
 }
 
 

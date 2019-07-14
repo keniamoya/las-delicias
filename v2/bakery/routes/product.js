@@ -12,10 +12,25 @@ const connection = mysql.createConnection({
 /* GET home page. */
 router.get('/:id', function(req, res, next) {
     var id = req.params.id;
-    connection.query('select name, description, price, product_Image from Product where idProduct = ?', [id], function(err, rows, fileds) {
+    connection.query('select idProduct, name, description, price, product_Image from Product where idProduct = ?', [id], function(err, rows, fileds) {
         if (err) throw err;
         res.render('product', { title: 'Las delicias', product: rows[0] });
     })
+});
+
+router.post('/:id', function(req, res) {
+    var id = req.params.id;
+    var quantity = req.body.units;
+    var spe = req.body.specification;
+
+    var sql = "call saveProduct(?, ?, ?)";
+
+    if (quantity != 0) {
+        connection.query(sql, [id, quantity, spe], function(err, result) {
+            if (err) throw err;
+            console.log('Inserted!');
+        });
+    }
 });
 
 module.exports = router;
