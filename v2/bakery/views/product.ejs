@@ -42,14 +42,14 @@
                     <hr>
                     <div class="row rowProduct">
                         <div class="col d-flex justify-content-left imgCol">
-                            <input id="units" name="units" type="number" required value="0" min="0" max="1000" step="1" onchange="total()" />
-                            <p class="categoryName">unidades</p>
-                        </div>
-                        <div class="col d-flex justify-content-left ">
-                            <p class="categoryName">
-                                Precio: $
+                            <span class="categoryName">Precio: $</span>
+                            <span class="categoryName">
                                 <%= product.price %>
-                            </p>
+                            </span>
+                        </div>
+                        <div class="col d-flex justify-content-left">
+                            <input id="units" name="units" type="number" required value="0" min="0" max="1000" step="1" onchange="total()" />
+                            <span class="categoryName">unidades</span>
                         </div>
                     </div>
                     <hr>
@@ -63,11 +63,11 @@
                     <hr>
                     <div class="row rowProduct d-flex ">
                         <div class="col imgCol">
-                            <span class="categoryName"> Total: $  </span>
+                            <span class="categoryName">Total: $</span>
                             <span id="total" name="total" class="categoryName"> 0 </span>
                         </div>
                         <div class="col">
-                            <button type="submit" class="btnClose btn" data-toggle="modal" data-target="#modalBuy" onclick="validation()"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
+                            <button type="submit" class="btnClose btn categoryName" data-toggle="modal" data-target="#modalBuy" onclick="validation()"><i class="fas fa-shopping-cart"></i> Agregar</button>
                         </div>
                     </div>
                 </div>

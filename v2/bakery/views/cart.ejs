@@ -32,120 +32,114 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-md-9 col-sm-12">
-                <p class="name1"> Lista de productos </p>
+            <div class="col-md-8 col-sm-12">
+                <p class="titleSection"> Lista de productos </p>
                 <hr>
-                <div id="principal" class="row">
-                    <!-- Product list -->
-                    <div class="col-md-9 col-sm-12">
-                        <!-- for de productos en el carrito -->
-                        <% priceTotal = 0%>
-                            <div id="<%=i%>" class="row rowOrder" style="overflow-x:auto;">
-                                <table class="table table-striped" id="mytable">
-                                    <thead>
-                                        <tr>
-                                            <th>
-                                                <p class="categoryName">Producto</p>
-                                            </th>
-                                            <th>
-                                                <p class="categoryName">Imagen</p>
-                                            </th>
-                                            <th>
-                                                <p class="categoryName">Precio</p>
-                                            </th>
-                                            <th>
-                                                <p class="categoryName">Total</p>
-                                            </th>
-                                            <th>
-                                                <p class="categoryName">Cantidad</p>
-                                            </th>
-                                            <th>
-                                                <p class="categoryName">Actualizar</p>
-                                            </th>
-                                            <th>
-                                                <p class="categoryName">Eliminar</p>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-center">
-                                        <% for (var i = 0; i < (cart.length); i++) { %>
-                                            <% priceTotal = priceTotal + (cart[i].price * cart[i].quantity)%>
-                                                <tr>
-                                                    <td>
-                                                        <p class="categoryName">
-                                                            <%=cart[i].name%>
-                                                        </p>
-                                                    </td>
-                                                    <td>
-                                                        <img src="/images/<%=cart[i].product_Image%>" alt="" width="100" height="auto">
-                                                    </td>
-                                                    <td>
-                                                        <span class="categoryDescription">$ <%=cart[i].price%></span>
-                                                    </td>
-                                                    <td>
-                                                        <%name1 = 'total' + i%>
-                                                            <%total = cart[i].price * cart[i].quantity%>
-                                                                <span class="categoryDescription">$</span>
-                                                                <span id="<%=name1%>" class="categoryDescription"><%=total%></span>
-                                                    </td>
-                                                    <td>
-                                                        <%name2 = 'units' + i%>
-                                                            <span id="<%=name2%>"><%=cart[i].quantity%> unidades</span>
-                                                    </td>
-                                                    <td>
-                                                        <button id="update" type="button" class="btnClose btn update" data-id="<%=cart[i].id%>" data-product_quantity="<%=cart[i].quantity%>" href="/cart/update" onclick="total('<%=cart[i].price%>', '<%=name1%>', '<%=name2%>', '<%=cart.length%>')" data-toggle="modal"
-                                                            data-target="#modalUpdate"><i class="fas fa-check"></i></button>
-                                                    </td>
-                                                    <td>
-                                                        <a href="javascript:void(0);" class="btnClose btn delete" data-id="<%=cart[i].id%>" href="/cart/delete"><i class="fas fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <% } %>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- fin de for -->
-                    </div>
+                <div id="principal" class="imgCol">
+                    <!-- for de productos en el carrito -->
+                    <% priceTotal = 0%>
+                        <div id="<%=i%>" class="table-responsive">
+                            <table class="table table-striped" id="mytable">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <p class="categoryCol">Producto</p>
+                                        </th>
+                                        <th>
+                                            <p class="categoryCol">Imagen</p>
+                                        </th>
+                                        <th>
+                                            <p class="categoryCol">Precio</p>
+                                        </th>
+                                        <th>
+                                            <p class="categoryCol">Total</p>
+                                        </th>
+                                        <th>
+                                            <p class="categoryCol">Cantidad</p>
+                                        </th>
+                                        <th>
+                                            <p class="categoryCol">Actualizar</p>
+                                        </th>
+                                        <th>
+                                            <p class="categoryCol">Eliminar</p>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <% for (var i = 0; i < (cart.length); i++) { %>
+                                        <% priceTotal = priceTotal + (cart[i].price * cart[i].quantity)%>
+                                            <tr>
+                                                <td>
+                                                    <p class="categoryCont">
+                                                        <%=cart[i].name%>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <img src="/images/<%=cart[i].product_Image%>" alt="" width="100" height="auto">
+                                                </td>
+                                                <td>
+                                                    <span class="categoryCont">$ <%=cart[i].price%></span>
+                                                </td>
+                                                <td>
+                                                    <%name1 = 'total' + i%>
+                                                        <%total = cart[i].price * cart[i].quantity%>
+                                                            <span class="categoryCont">$</span>
+                                                            <span id="<%=name1%>" class="categoryCont"><%=total%></span>
+                                                </td>
+                                                <td>
+                                                    <%name2 = 'units' + i%>
+                                                        <span id="<%=name2%>" class="categoryCont"><%=cart[i].quantity%> unidades</span>
+                                                </td>
+                                                <td>
+                                                    <button id="update" type="button" class="btnClose btn update" data-id="<%=cart[i].id%>" data-product_quantity="<%=cart[i].quantity%>" href="/cart/update" data-toggle="modal" data-target="#modalUpdate"><i class="fas fa-check"></i></button>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0);" class="btnClose btn delete" data-id="<%=cart[i].id%>" href="/cart/delete"><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- fin de for -->
                 </div>
             </div>
-            <div id="resume" class="col-md-3 col-sm-12">
-                <p class="name1"> Resumen </p>
+            <div id="resume" class="col-md-4 col-sm-12">
+                <p class="titleSection"> Resumen </p>
                 <hr>
                 <!-- Resume -->
-                <div class="col-md-3 col-sm-12">
-                    <div class="row">
-                        <div class="col">
-                            <p class="categoryName"> Subtotal:</p>
-                        </div>
-                        <div class="col">
-                            <span>$</span>
-                            <span id="subtotal" class="categoryName"><%=priceTotal%></span>
-                        </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="categoryCont"> Subtotal:</p>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="categoryName"> Envío:</p>
-                        </div>
-                        <div class="col">
-                            <span>$</span>
-                            <span id="send" class="categoryName"> <%=priceTotal*0.10%> </span>
-                        </div>
+                    <div class="col">
+                        <span>$</span>
+                        <span id="subtotal" class="categoryCont"><%=priceTotal%></span>
                     </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col">
-                            <p class="categoryName"> TOTAL: </p>
-                        </div>
-                        <div class="col">
-                            <span>$</span>
-                            <span id="totalSend" class="categoryName"> <%=priceTotal + (priceTotal*0.10)%> </span>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="categoryCont"> Envío:</p>
                     </div>
-                    <hr>
-                    <div class="row d-flex justify-content-left">
-                        <div class="col">
-                            <a href="javascript:void(0);" class="btnClose btn checkout" href="/cart/checkout"><i class="fas fa-arrow-right"></i> Siguiente</a>
-                        </div>
+                    <div class="col">
+                        <span>$</span>
+                        <span id="send" class="categoryCont"> <%=priceTotal*0.10%> </span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        <p class="categoryCont"> TOTAL: </p>
+                    </div>
+                    <div class="col">
+                        <span>$</span>
+                        <span id="totalSend" class="categoryCont"> <%=priceTotal + (priceTotal*0.10)%> </span>
+                    </div>
+                </div>
+                <hr>
+                <div class="row d-flex justify-content-left">
+                    <div class="col">
+                        <a href="javascript:void(0);" class="btnClose btn checkout categoryCont" href="/cart/checkout"><i class="fas fa-arrow-right"></i> Siguiente</a>
                     </div>
                 </div>
             </div>
@@ -169,8 +163,8 @@
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" name="idProduct" id="idProduct" class="form-control" required>
-                        <button type="button" class="btnClose btn" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btnClose btn">Eliminar</button>
+                        <button type="button" class="btnClose btn categoryName" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btnClose btn categoryName">Eliminar</button>
                     </div>
                 </div>
             </div>
@@ -198,8 +192,8 @@
                     </div>
                     <div class="modal-footer">
                         <input type="hidden" name="idProduct2" id="idProduct2" class="form-control" required>
-                        <button type="button" class="btnClose btn" data-dismiss="modal" href="/">Cancelar</button>
-                        <button type="submit" class="btnClose btn">Actualizar</button>
+                        <button type="button" class="btnClose btn categoryName" data-dismiss="modal" href="/">Cancelar</button>
+                        <button type="submit" class="btnClose btn categoryName">Actualizar</button>
                     </div>
                 </div>
             </div>
@@ -216,41 +210,56 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
-                        <form action="/action_page.php" class="was-validated">
-                            <div class="form-group">
-                                <label for="uname">Nombre:</label>
-                                <input type="text" class="form-control" id="uname" placeholder="Escriba su nombre..." name="uname" required>
-                                <div class="valid-feedback">Válido</div>
-                                <div class="invalid-feedback">Por favor complete este espacio.</div>
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Dirección:</label>
-                                <input type="text" class="form-control" id="address" placeholder="Escriba su dirección..." name="pswd" required>
-                                <div class="valid-feedback">Válido</div>
-                                <div class="invalid-feedback">Por favor complete este espacio.</div>
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Teléfono:</label>
-                                <input type="tel" class="form-control" id="address" placeholder="Escriba su teléfono..." name="pswd" required>
-                                <div class="valid-feedback">Válido</div>
-                                <div class="invalid-feedback">Por favor complete este espacio.</div>
-                            </div>
-                            <div class="form-group form-check">
-                                <label class="form-radio-label">
-                                    <input class="form-radio-input" type="radio" name="remember" required> Recoger en la panadería. <br>
+                        <div class="form-finish">
+                            <form action="/action_page.php" class="was-validated">
+                                <div class="form-group">
+                                    <label for="uname">Nombre:</label>
+                                    <input type="text" class="form-control" id="uname" placeholder="Escriba su nombre..." name="uname" required>
+                                    <div class="valid-feedback">Válido</div>
+                                    <div class="invalid-feedback">Por favor complete este espacio.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Dirección:</label>
+                                    <input type="text" class="form-control" id="address" placeholder="Escriba su dirección..." name="pswd" required>
+                                    <div class="valid-feedback">Válido</div>
+                                    <div class="invalid-feedback">Por favor complete este espacio.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Teléfono:</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Escriba su teléfono..." name="pswd" required pattern="[0-9]{8}">
+                                    <div class="valid-feedback">Válido</div>
+                                    <div class="invalid-feedback">Por favor complete este espacio.</div>
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-radio-label">
+                                    <input class="form-radio-input" type="radio" name="remember" required checked> Recoger en la panadería. <br>
                                     <input class="form-radio-input" type="radio" name="remember" required> Enviar a la dirección anterior.
                                 </label>
+                                </div>
+                        </div>
+                        <div class="toast" data-autohide="false">
+                            <div class="toast-header">
+                                <strong class="mr-auto text-primary">PEDIDO</strong>
+                                <small class="text-muted">5 seg</small>
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
                             </div>
+                            <div class="toast-body">
+                                EN PROCESO
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btnClose btn" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btnClose btn"><i class="fas fa-shopping-bag"></i> Listo</button>
+                        <button type="button" class="btnClose btn categoryName" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btnClose btn categoryName" onclick="finish()"><i class="fas fa-shopping-bag"></i> Listo</button>
                     </div>
                     </form>
                 </div>
             </div>
         </div>
     </form>
+
+
+
 
     <!-- FOOTER -->
     <div>
@@ -274,26 +283,17 @@
                 $('#modalCheckout').modal('show');
             });
         });
-    </script>
 
-    <script>
-        function total(price, name1, name2, length) {
-            var quantity = document.getElementById(name2).value;
-            var total1 = price * quantity;
-            document.getElementById(name1).innerHTML = total1;
-            var sub = 0;
-            var count = 0;
-            for (let a = 0; a < length; a++) {
-                var name = 'total' + a;
-                count = parseInt(document.getElementById(name).innerHTML);
-                sub += count;
-                document.getElementById('subtotal').innerHTML = sub;
-                document.getElementById('send').innerHTML = (sub * 0.10);
-                document.getElementById('totalSend').innerHTML = sub + (sub * 0.10);
+        function finish() {
+            var name = document.getElementById('uname').value
+            var address = document.getElementById('address').value
+            var phone = document.getElementById('phone').value
+            var phoneVal = phone.length
+            if (name != '' && address != '' && phoneVal == 8 && /^([0-9])*$/.test(phone)) {
+                alert(name + " su pedido se ha empezado a procesar. \n Gracias por su preferencia")
             }
         }
     </script>
-
 </body>
 
 </html>
