@@ -1,0 +1,510 @@
+body,
+html {
+    margin: 0;
+    font-family: 'Luckiest Guy', cursive !important;
+    height: auto;
+}
+
+hr {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+.col {
+    min-width: 30%;
+}
+
+.fa-times-circle {
+    color: black;
+}
+
+.titleSection {
+    padding-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+
+/* -NAVBAR- */
+
+.sticky {
+    top: 0;
+    width: 100%;
+}
+
+.btnSearch {
+    background-color: rgb(223, 223, 223);
+    color: black;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    word-wrap: break-word;
+}
+
+.btnSearch:hover {
+    background-color: #e9cf85;
+}
+
+.liMenu {
+    font-size: 1.1rem;
+}
+
+.aMenu {
+    padding-top: 0.25rem;
+}
+
+.liMenu:hover {
+    color: #e9cf85 !important;
+}
+
+
+/* -BANNER- */
+
+.banner {
+    width: 100%;
+    height: 40vh;
+    min-height: 30vh;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-bottom-width: 0.5rem;
+    border-bottom-color: #333;
+    border-bottom-style: solid;
+}
+
+.name1 {
+    font-size: 3vw;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.name2 {
+    font-size: 5vw;
+}
+
+.imagen {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.img1 {
+    background-image: url("/images/banner2.png");
+}
+
+
+/* -MODAL- */
+
+.btnClose {
+    background-color: #e9cf85;
+    border-color: #e9cf85;
+    color: black
+}
+
+.btnClose:hover {
+    background-color: rgb(223, 223, 223);
+    border-color: rgb(223, 223, 223);
+    color: fff
+}
+
+
+/* -CATEGORIAS- */
+
+.carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next {
+    transform: translateX(33.33%);
+}
+
+.carousel-inner .carousel-item-left.active,
+.carousel-inner .carousel-item-prev {
+    transform: translateX(-33.33%)
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left {
+    transform: translateX(0);
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    background-color: black;
+    padding: 1rem
+}
+
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:hover {
+    background-color: rgba(119, 7, 7, 0.849);
+    padding: 1.5rem
+}
+
+.category {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* -PRODUCT LIST- */
+
+.productList {
+    background-image: url("/images/banner2.png");
+}
+
+.productListElements {
+    background-color: rgb(0, 0, 0);
+    background-color: #e9ce858e;
+    font-weight: bold;
+    border: 2px solid #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.productsSection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #e9ce858e;
+    width: 100%;
+    border-bottom-width: 0.5rem;
+    border-bottom-color: #333;
+    border-bottom-style: solid;
+}
+
+.imgCol {
+    border-right-width: thin;
+    border-right-color: rgba(0, 3, 3, 0.144);
+    border-right-style: solid;
+}
+
+.productListBody {
+    background-color: #e9ce858e;
+}
+
+.productimg {
+    border: rgba(0, 0, 0, 0.801);
+    border-radius: 50px;
+    width: 100%;
+    height: auto;
+    min-width: 100;
+    min-height: 80px;
+    max-width: 200px;
+    max-height: 140px;
+    margin-bottom: 1rem;
+}
+
+.productBlock {
+    border-right-width: thin;
+    border-right-color: rgba(0, 3, 3, 0.144);
+    border-right-style: solid;
+}
+
+.productBlock:hover {
+    cursor: pointer;
+    border: solid #a84a13c9;
+}
+
+.productArea {
+    background-color: #f3e4bb;
+    padding: 2rem 4rem 2rem 4rem;
+}
+
+.productCol {
+    margin: 0rem 0rem 0rem 0rem;
+    padding: 1rem 0rem;
+}
+
+.imgProduct {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #e9cf85;
+    width: 100%;
+    height: auto;
+}
+
+.link:hover {
+    color: #a84a13c9;
+}
+
+
+/* -PRODUCT- */
+
+.rowProduct {
+    margin: 0.5rem;
+}
+
+
+/* -US- */
+
+.usArea {
+    background-color: #f3e4bb;
+    padding-top: 1rem;
+}
+
+.pUs {
+    text-align: justify;
+}
+
+
+/* -CART- */
+
+.centerVertically {
+    align-self: center;
+}
+
+.rowOrder {
+    padding: 0.5rem;
+}
+
+.buttonOrder {
+    text-align: right;
+}
+
+#removeRow:hover {
+    cursor: pointer;
+}
+
+
+/* -FOOTER- */
+
+footer {
+    background-color: #333;
+    color: white;
+}
+
+.textFooter {
+    color: #fff
+}
+
+.textFooter:hover {
+    color: #e9cf85
+}
+
+.textFooter:visited {
+    color: #e9cf85
+}
+
+
+/* ------------------------------------------------------------ */
+
+.categorySection {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #e9ce85c9;
+    width: 100%;
+}
+
+.categoryblock {
+    background-color: #e9ce85e0;
+}
+
+.colCategoria {
+    margin: 0rem 0.5rem;
+    min-width: 20rem;
+    max-width: 20rem;
+    /*col-xs-12 col-sm-12 col-md-3 col-lg-3*/
+}
+
+.categoryimg {
+    border: rgba(0, 0, 0, 0.801);
+    border-radius: 50px;
+    width: 100%;
+    min-width: 330px;
+    min-height: 160px;
+    max-width: 360px;
+    max-height: 180px;
+    padding: 0.5rem;
+}
+
+.categoryblock:hover {
+    cursor: pointer;
+    border: solid #a84a13c9;
+}
+
+.categoryName {
+    font-size: 1rem;
+    color: black;
+    margin: 0.2rem;
+    padding: 0.6rem;
+}
+
+.categoryCol {
+    font-size: 1.2rem;
+    color: black;
+    margin: 0.2rem;
+}
+
+.categoryCont {
+    font-size: 1rem;
+}
+
+.categoryDescription {
+    font-size: 0.7rem;
+    color: black;
+    margin: 0.2rem;
+}
+
+
+/**/
+
+@import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+html,
+body {
+    height: 100%;
+}
+
+h1 {
+    font-size: 2em;
+    font: bold 3vw/1.6 'Signika', sans-serif;
+    user-select: none;
+}
+
+h1 span {
+    display: inline-block;
+    animation: float .2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: none;
+    }
+    33% {
+        transform: translateY(-1px) rotate(-2deg);
+    }
+    66% {
+        transform: translateY(1px) rotate(2deg);
+    }
+}
+
+body:hover span {
+    animation: bounce 1s;
+    -webkit-animation: bounce 1s;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translate(0);
+    }
+    25% {
+        transform: rotateX(20deg) translateY(2px) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(3deg) scale(1.1);
+    }
+}
+
+span:nth-child(4n) {
+    color: hsl(50, 75%, 55%);
+    text-shadow: 0.5px 0.5px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%);
+}
+
+span:nth-child(4n-1) {
+    color: hsl(135, 35%, 55%);
+    text-shadow: 1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%);
+}
+
+span:nth-child(4n-2) {
+    color: hsl(155, 35%, 60%);
+    text-shadow: 0.5px 0.5px hsl(155, 25%, 50%), 1px 1px hsl(155, 25%, 50%), 0.5px 0.5px hsl(155, 25%, 50%), 1px 1px hsl(140, 25%, 50%);
+}
+
+span:nth-child(4n-3) {
+    color: hsl(30, 65%, 60%);
+    text-shadow: 0.5px 0.5px hsl(30, 45%, 50%), 1px 1px hsl(30, 45%, 50%), 0.5px 0.5px hsl(30, 45%, 50%), 1px 1px hsl(30, 45%, 50%);
+}
+
+h1 span:nth-child(2) {
+    animation-delay: .05s;
+}
+
+h1 span:nth-child(3) {
+    animation-delay: .1s;
+}
+
+h1 span:nth-child(4) {
+    animation-delay: .15s;
+}
+
+h1 span:nth-child(5) {
+    animation-delay: .2s;
+}
+
+h1 span:nth-child(6) {
+    animation-delay: .25s;
+}
+
+h1 span:nth-child(7) {
+    animation-delay: .3s;
+}
+
+h1 span:nth-child(8) {
+    animation-delay: .35s;
+}
+
+h1 span:nth-child(9) {
+    animation-delay: .4s;
+}
+
+h1 span:nth-child(10) {
+    animation-delay: .45s;
+}
+
+h1 span:nth-child(11) {
+    animation-delay: .5s;
+}
+
+h1 span:nth-child(12) {
+    animation-delay: .55s;
+}
+
+h1 span:nth-child(13) {
+    animation-delay: .6s;
+}
+
+h1 span:nth-child(14) {
+    animation-delay: .65s;
+}
+
+.center-outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.center-inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.bubbles {
+    display: inline-block;
+    font-family: arial;
+    position: relative;
+}
+
+.bubbles h1 {
+    position: relative;
+    font-size: 5vw;
+    font-family: 'Luckiest Guy', cursive;
+    color: #e9cf85;
+    z-index: 2;
+}
+
+.individual-bubble {
+    position: absolute;
+    border-radius: 100%;
+    bottom: 10px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.toast {
+    display: none;
+}
